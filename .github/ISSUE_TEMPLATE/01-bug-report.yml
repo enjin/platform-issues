@@ -1,0 +1,82 @@
+name: Bug Report
+description: Report a bug with the Enjin Platform.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to submit a bug report for the Enjin Platform.
+        
+        **Do not include any private or sensitive information.**
+        
+        Is this a security vulnerability? See our [Security Policy](../security/policy) for information on responsible disclosure.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe in detail the issue that you encountered. The more information you can supply, the better.
+    validations:
+      required: true
+  - type: textarea
+    id: expected-outcome
+    attributes:
+      label: Expected Outcome
+      description: Describe what the expected outcome would be when performing this interaction.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Steps to Reproduce
+      description: Provide a clear, step-by-step, list of instructions to reproduce the issue.
+      value: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+  - type: dropdown
+    id: hosting-type
+    attributes:
+      label: Hosting Type
+      description: How are you using the Platform? [What are the differences?](https://docs.enjin.io/docs/self-hosting)
+      options:
+        - Enjin Platform Cloud
+        - Self Hosted
+      default: 0
+    validations:
+      required: true
+  - type: dropdown
+    id: interfaces
+    attributes:
+      label: Which interface(s) are you encountering the bug?
+      description: Leave blank if not known.
+      multiple: true
+      options:
+        - User Interface
+        - GraphQL API
+        - SDK
+        - CLI
+  - type: dropdown
+    id: packages
+    attributes:
+      label: Which package(s) are you encountering the bug?
+      description: Leave blank if not known.
+      multiple: true
+      options:
+        - Core (platform-core)
+        - User Interface (platform-ui)
+        - Beam (platform-beam)
+        - Fuel Tanks (platform-fuel-tanks)
+        - Marketplace (platform-marketplace)
+        - Decoder (platform-decoder)
+        - C# SDK (platform-csharp-sdk)
+        - Wallet Daemon (wallet-daemon)
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Please copy and paste any relevant log output.
+      render: shell
+
